@@ -5,7 +5,52 @@ int main()
 {
 	using namespace std;
 
-	cout << "\aOperation \"HyperHype\" is now activated!\n";
+	int auks, bats, coots;
+	auks = 19.99 + 11.99;
+	bats = (int)19.99 + (int)11.99;   // old C syntax
+	coots = int(19.99) + int(11.99);  // new C++ syntax
+	cout << "auks = " << auks << ", bats = " << bats << ", coots = " << coots << endl;
+	char ch = 'Z';
+	cout << "The code for " << ch << " is ";    // print as char
+	cout << int(ch) << endl;                    // print as int
+	cout << "Yes, the code is ";
+	cout << static_cast<int>(ch) << endl;       // using static_cast
+
+	cout.setf(ios_base::fixed, ios_base::floatfield); // fixed-point
+	float tree = 3;
+	cout << "tree=" << tree << endl;
+	int guess(3.9832);
+	cout << "guess=" << guess << endl;
+	int debt = 7.2e12;
+	cout << "debt=" << debt << endl;
+
+	cout << "9/5=" << 9 / 5 << endl;
+	cout << "9.0/5.0=" << 9.0 / 5.0 << endl;
+	cout << "9/5.0=" << 9 / 5.0 << endl;
+	cout << "1e7/9.0=" << 1e7 / 9.0 << endl;
+	cout << "1e7f/9.0f=" << 1e7f / 9.0f << endl;
+	cout << "1e7l/9.0l=" << 1e7l / 9.0l << endl;
+
+	float hats = 50.25;
+	float heads = 11.17;
+	cout << "hats=" << hats << endl;
+	cout << "heads=" << heads << endl;
+	cout << "hats+heads=" << hats + heads << endl;
+	cout << "hats-heads=" << hats - heads << endl;
+	cout << "hats*heads=" << hats * heads << endl;
+	cout << "hats/heads=" << hats / heads << endl;
+
+	float tub = 10.0 / 3.0;     // good to about 6 places
+	double mint = 10.0 / 3.0;   // good to about 15 places
+	const float million = 1.0e6;
+	cout << "tub = " << tub;
+	cout << ", a million tubs = " << million * tub;
+	cout << ",\nand ten million tubs = ";
+	cout << 10 * million * tub << endl;
+	cout << "mint = " << mint << " and a million mints = ";
+	cout << million * mint << endl<<endl;
+
+	cout << "\aOperation \"HyperHype\" is now activated!\u00E2\n";
 	cout << "Enter your agent code:________\b\b\b\b\b\b\b\b";
 	long code;
 	cin >> code;
@@ -18,7 +63,7 @@ int main()
 	char ch;
 	cin >> ch;
 	cout << ch << endl;
-	cout.put(ch);
+	cout.put(ch) << endl;
 
 	int a = 42;
 	int b = 042;

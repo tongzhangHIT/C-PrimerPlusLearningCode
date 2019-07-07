@@ -1,2 +1,5 @@
 ﻿  源.cpp
+C:\Users\Tong\Desktop\cpp\cpp-3\cpp3\cpp3\源.cpp(9,15): warning C4244:  “=”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Tong\Desktop\cpp\cpp-3\cpp3\cpp3\源.cpp(22,11): warning C4244:  “初始化”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Tong\Desktop\cpp\cpp-3\cpp3\cpp3\源.cpp(24,11): warning C4244:  “初始化”: 从“double”转换到“int”，可能丢失数据
   cpp3.vcxproj -> C:\Users\Tong\Desktop\cpp\cpp-3\cpp3\Debug\cpp3.exe
