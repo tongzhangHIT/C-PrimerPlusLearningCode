@@ -5,8 +5,86 @@ int main()
 {
 	using namespace std;
 
+
+
+	char animal[20] = "bear";   // animal holds bear
+	const char* bird = "wren"; // bird holds address of string
+	char* ps;                  // uninitialized
+	cout << animal << " and ";  // display bear
+	cout << bird << "\n";       // display wren
+	// cout << ps << "\n";      //may display garbage, may cause a crash
+	cout << "Enter a kind of animal: ";
+	cin >> animal;              // ok if input < 20 chars
+	// cin >> ps; Too horrible a blunder to try; ps doesn't
+	//            point to allocated space
+	ps = animal;                // set ps to point to string
+	cout << ps << "!\n";       // ok, same as using animal
+	cout << "Before using strcpy():\n";
+	cout << animal << " at " << (int*)animal << endl;//  (int*)
+	cout << ps << " at " << (int*)ps << endl;
+	ps = new char[strlen(animal) + 1];  // get new storage
+	//strcpy(ps, animal);         // copy string to new storage
+	strcpy_s(ps, strlen(animal) + 1, animal);
+	cout << "After using strcpy():\n";
+	cout << animal << " at " << (int*)animal << endl;
+	cout << ps << " at " << (int*)ps << endl;
+	delete[] ps;
+
+	short tell[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	cout << tell << endl;//addreess
+	cout << &tell+1 << endl;
+	short (*pas)[10]=&tell;//pas=&tell,*pas=tell
+	cout << (*pas)[0] << endl;
+
+	/*double wages[3] = { 10000.0, 20000.0, 30000.0 };
+	short stacks[3] = { 3, 2, 1 };
+	// Here are two ways to get the address of an array
+	double* pw = wages;     // name of an array = address
+	short* ps = &stacks[0]; // or use address operator
+	cout << "pw = " << pw << ", *pw = " << *pw << endl;
+	pw = pw + 1;
+	cout << "add 1 to the pw pointer:\n";
+	cout << "pw = " << pw << ", *pw = " << *pw << "\n\n";
+	cout << "ps = " << ps << ", *ps = " << *ps << endl;
+	ps = ps + 1;
+	cout << "add 1 to the ps pointer:\n";
+	cout << "ps = " << ps << ", *ps = " << *ps << "\n\n";
+	cout << "access two elements with array notation\n";
+	cout << "stacks[0] = " << stacks[0]
+		<< ", stacks[1] = " << stacks[1] << endl;
+	cout << "access two elements with pointer notation\n";
+	cout << "*stacks = " << *stacks
+		<< ", *(stacks + 1) =  " << *(stacks + 1) << endl;
+	cout << sizeof(wages) << " = size of wages array\n";
+	cout << sizeof(pw) << " = size of pw pointer\n";
+	*/
+	double* p3 = new double[3];
+	p3[0] = 0.5;
+	p3[1] = 0.94;
+	p3[2] = 2.46;
+	cout << p3[0] << p3[1] << p3[2] << endl;
+	p3 = p3 + 1;
+	cout << p3[0] << p3[1] << endl;
+	p3 = p3 - 1;
+	delete[] p3;
+
+	int nights = 1001;
+	int* pt = new int;
+	*pt = 1001;
+	cout << nights << " " << &nights << endl;
+	cout << *pt << " " << pt << endl;
+	double* pd = new double;
+	*pd = 10000001.0;
+	cout << "value=" << *pd << ",location=" << pd << endl;
+	cout << "location of pd=" << &pd << endl;
+	cout << "size of pt=" << sizeof(pt)<<endl;
+	cout << "size of *pt=" << sizeof(*pt) << endl;
+	cout << "size of pd=" << sizeof(pd) << endl;
+	cout << "size of *pd=" << sizeof(*pd) << endl;
+	delete pd;
+	
 	int updates = 6;        // declare a variable
-	int * p_updates;        // declare pointer to an int
+	int* p_updates;        // declare pointer to an int
 	p_updates = &updates;   // assign address of int to pointer
 	// express values two ways
 	cout << "Values: updates = " << updates;
