@@ -1,18 +1,55 @@
 #include<iostream>
 #include<cstring>
 #include<string>
-struct inflatable   // structure declaration
-{
-	char name[20];
-	float volume;
-	double price;
-};
 int main()
 {
 	using namespace std;
 
+	int updates = 6;        // declare a variable
+	int * p_updates;        // declare pointer to an int
+	p_updates = &updates;   // assign address of int to pointer
+	// express values two ways
+	cout << "Values: updates = " << updates;
+	cout << ", *p_updates = " << *p_updates << endl;
+	// express address two ways
+	cout << "Addresses: &updates = " << &updates;
+	cout << ", p_updates = " << p_updates << endl;
+	// use pointer to change value
+	*p_updates = *p_updates + 1;
+	cout << "Now updates = " << updates << endl;
+	
+	union one4all
+	{
+		int int_vsl;
+		long long_vsl;
+		double double_vsl;
+	};
+	one4all pinl;
+	pinl.double_vsl = 2.145;
+	cout << pinl.double_vsl << endl;
+	struct widget
+	{
+		char brand[20];
+		int type;
+		union id
+		{
+			long id_num;//type 1
+			char id_char[20];
+		}id_val;
+	};
+	widget prize;
+	prize.type = 1;
+	if (prize.type == 1)
+		cin >> prize.id_val.id_num;
+	else
+		cin >> prize.id_val.id_char;
 
-
+	struct inflatable   // structure declaration
+	{
+		char name[20];
+		float volume;
+		double price;
+	};
 	inflatable guest =
 	{
 		"Glorious Gloria",  // name value
@@ -149,7 +186,7 @@ int main()
 	cin >> dessert;
 	cout << "I have some delicious " << dessert;
 	cout << " for you, " << name << ".\n";*/
-
+	
 	const int Size = 15;
 	char name1[Size];               // empty array
 	char name2[Size] = "C++owboy";  // initialized array
@@ -176,9 +213,9 @@ int main()
 	yams[2] = 6;
 	int yamscout[3] = { 20,30,5 };
 	cout << "Sizee of yams array = " << sizeof yams << " bytes.\n";
-	//cout << yamscout << endl;//µØÖ·£¿
+	//cout << yamscout << endl;//µØÖ·
 	//cout << yams << endl;
-
+	
 	cin.get();
 	return 0;
 }
