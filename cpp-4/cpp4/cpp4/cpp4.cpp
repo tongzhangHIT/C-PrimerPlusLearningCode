@@ -1,11 +1,36 @@
 #include<iostream>
 #include<cstring>
 #include<string>
+char* getname(void);
+struct inflatable   // structure declaration
+{
+	char name[20];
+	float volume;
+	double price;
+};
 int main()
 {
 	using namespace std;
-
-
+	
+	char* name;
+	name = getname();
+	cout << name << " at " << (int*)name << endl;
+	delete[] name;
+	name = getname();
+	cout << name << " at " << (int*)name << endl;
+	delete[] name;
+	
+	inflatable* ps1 = new inflatable; // allot memory for structure
+	cout << "Enter name of inflatable item: ";
+	cin.get(ps1->name, 20);            // method 1 for member access
+	cout << "Enter volume in cubic feet: ";
+	cin >> (*ps1).volume;              // method 2 for member access
+	cout << "Enter price: $";
+	cin >> ps1->price;
+	cout << "Name: " << (*ps1).name << endl;              // method 2
+	cout << "Volume: " << ps1->volume << " cubic feet\n"; // method 1
+	cout << "Price: $" << ps1->price << endl;             // method 1
+	delete ps1;
 
 	char animal[20] = "bear";   // animal holds bear
 	const char* bird = "wren"; // bird holds address of string
@@ -122,12 +147,6 @@ int main()
 	else
 		cin >> prize.id_val.id_char;
 
-	struct inflatable   // structure declaration
-	{
-		char name[20];
-		float volume;
-		double price;
-	};
 	inflatable guest =
 	{
 		"Glorious Gloria",  // name value
@@ -236,14 +255,14 @@ int main()
 	cout << "Done!\n";
 
 	const int ArSize = 20;
-	char name[ArSize];
+	char name10[ArSize];
 	char dessert[ArSize];
 	cout << "Enter your name:\n";
-	cin.get(name, ArSize).get();    // read string, newline
+	cin.get(name10, ArSize).get();    // read string, newline
 	cout << "Enter your favorite dessert:\n";
 	cin.get(dessert, ArSize).get();
 	cout << "I have some delicious " << dessert;
-	cout << " for you, " << name << ".\n";
+	cout << " for you, " << name10 << ".\n";
 
 	/*const int ArSize = 20;
 	char name[ArSize];
@@ -296,4 +315,15 @@ int main()
 	
 	cin.get();
 	return 0;
+}
+char* getname()
+{
+	using namespace std;
+	char temp[80];
+	cout << "enter last name: ";
+	cin >> temp;
+	char* pn = new char[strlen(temp) + 1];
+	//strcpy(pn, temp);
+	strcpy_s(pn, strlen(temp) + 1, temp);
+	return pn;
 }
