@@ -1,4 +1,4 @@
 ﻿  cpp4.cpp
-C:\Users\Tong\Desktop\cpp\cpp-4\cpp4\cpp4\cpp4.cpp(155,2): warning C4305:  “初始化”: 从“double”到“float”截断
-C:\Users\Tong\Desktop\cpp\cpp-4\cpp4\cpp4\cpp4.cpp(161,2): warning C4305:  “初始化”: 从“double”到“float”截断
+C:\Users\Tong\Desktop\cpp\cpp-4\cpp4\cpp4\cpp4.cpp(202,2): warning C4305:  “初始化”: 从“double”到“float”截断
+C:\Users\Tong\Desktop\cpp\cpp-4\cpp4\cpp4\cpp4.cpp(208,2): warning C4305:  “初始化”: 从“double”到“float”截断
   cpp4.vcxproj -> C:\Users\Tong\Desktop\cpp\cpp-4\cpp4\cpp4\Debug\cpp4.exe
