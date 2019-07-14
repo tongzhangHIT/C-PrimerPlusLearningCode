@@ -15,4 +15,5 @@ int main()
 	cout << "What is your age?";
 	cin >> age;
 	cout << "Name:" << lastname << "," << firstname << endl << "Grade:" << (char)(letter + 1) << endl << "Age:" << age;
+	return 0;
 }
