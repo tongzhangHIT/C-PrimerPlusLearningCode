@@ -6,6 +6,72 @@ int main()
 {
 	using namespace std;
 	
+	const int Max = 5;
+	// get data
+	int golf[Max];
+	cout << "Please enter your golf scores.\n";
+	cout << "You must enter " << Max << " rounds.\n";
+	int i;
+	for (i = 0; i < Max; i++)
+	{
+		cout << "round #" << i + 1 << ": ";
+		while (!(cin >> golf[i])) {
+			cin.clear();     // reset input
+			while (cin.get() != '\n')
+				continue;    // get rid of bad input//清除所有错误输入
+			cout << "Please enter a number: ";
+		}
+	}
+	// calculate average
+	double total = 0.0;
+	for (i = 0; i < Max; i++)
+		total += golf[i];
+	// report results
+	cout << total / Max << " = average score "
+		<< Max << " rounds\n";
+
+	// get data
+	double fish[Max];
+	cout << "Please enter the weights of your fish.\n";
+	cout << "You may enter up to " << Max
+		<< " fish <q to terminate>.\n";
+	cout << "fish #1: ";
+	//int 
+		i = 0;
+	while (i < Max && cin >> fish[i]) {
+		if (++i < Max)
+			cout << "fish #" << i + 1 << ": ";
+	}
+	// calculate average
+	//double 
+		total = 0.0;
+	for (int j = 0; j < i; j++)
+		total += fish[j];
+	// report results
+	if (i == 0)
+		cout << "No fish\n";
+	else
+		cout << total / i << " = average weight of "
+		<< i << " fish\n";
+	cout << "Done.\n";
+
+	const int ArSize = 80;
+	char line[ArSize];
+	int space = 0;
+	cout << "enter a line of text: \n";
+	cin.get(line, ArSize);
+	cout << "complete: " << line << endl;
+	for (int i = 0; line[i] != '\0'; i++)
+	{
+		cout << line[i];
+		if (line[i] == '.')
+			break;
+		if (line[i] == ' ')
+			continue;
+		space++;
+	}
+	cout << endl << space << " spaces\n";
+
 	enum { red, orange, yellow, green, blue, violet, indigo };
 	cout << "Enter color code (0-6): ";
 	int code;
@@ -145,27 +211,27 @@ int main()
 		index = 3;
 	cout << "You qualify for the " << qualify[index];
 
-	const int ArSize = 6;
-	float naaq[ArSize];
+	const int ArSize0 = 6;
+	float naaq[ArSize0];
 	cout << "Enter the NAAQs (New Age Awareness Quotients) "
 		<< "of\nyour neighbors. Program terminates "
-		<< "when you make\n" << ArSize << " entries "
+		<< "when you make\n" << ArSize0 << " entries "
 		<< "or enter a negative value.\n";
-	int i = 0;
+	int i0 = 0;
 	float temp;
 	cout << "First value: ";
 	cin >> temp;
-	while (i < ArSize && temp >= 0) // 2 quitting criteria
+	while (i0 < ArSize0 && temp >= 0) // 2 quitting criteria
 	{
-		naaq[i] = temp;
-		++i;
-		if (i < ArSize)             // room left in the array,
+		naaq[i0] = temp;
+		++i0;
+		if (i0 < ArSize0)             // room left in the array,
 		{
 			cout << "Next value: ";
 			cin >> temp;            // so get next value
 		}
 	}
-	if (i == 0)
+	if (i0 == 0)
 		cout << "No data--bye\n";
 	else
 	{
@@ -173,7 +239,7 @@ int main()
 		float you;
 		cin >> you;
 		int count = 0;
-		for (int j = 0; j < i; j++)
+		for (int j = 0; j < i0; j++)
 			if (naaq[j] > you)
 				++count;
 		cout << count;
