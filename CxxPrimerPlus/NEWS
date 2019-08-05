@@ -1,0 +1,48 @@
+count source line and visualize (using R)
+ o implement countLine function to count cpp source file <2012-02-18, Sat>
+ o add script to get files in each folder, count source lines of each foler
+   and visualize using barplot <2012-02-20, Mon>
+ o pre-allocate allLen variable <2012-02-29, Wed>   
+ o update countLine.R to support counting header file. <2012-03-09, Fri>
+
+chapter 11
+ o implemented exercies 1-3 <2012-04-26, Thu>
+ o implemented exercies 4-6 <2012-04-27, Fri>
+ o implemented exercies 7 <2012-04-28, Sat>
+
+chapter 10
+ o implemented exercies 1-4 <2012-03-31, Sat>
+ o implemented exercise 5-8 <2012-04-05, Thu>
+
+chapter 9
+ o implemented exercies 1-4 <2012-03-09, Fri>
+ 
+chapter 8
+ o implemented exercies 6-7 <2012-03-01, Thu>
+ o implemented exercies 3-5 <2012-02-29, Wed>
+ o implemented exercies 1-2 <2012-02-27, Mon> 
+ 
+chapter 7
+ o implemented exercies 7-9 <2012-02-23, Thu> 
+ o implemented exercies 3-6 <2012-02-22, Wed>
+ o implemented exercies 2 <2012-02-20, Mon> 
+ o implemented exercies 1 <2012-02-18, Sat>
+
+chapter 6
+ o implemented exercies 6-9 <2012-02-17, Fri>
+ o implemented exercies 5 <2012-02-16, Thu> 
+ o implemented exercies 1-4  <2012-02-10, Fri>
+ 
+chapter 5 
+ o implemented exercies 6-9 <2012-02-08, Wed>
+ o implemented exercies 4-5 <2012-02-07, Tue> 
+ o implemented exercies 1-3 <2012-02-06, Mon>
+
+chapter 4 
+ o implemented exercies in chapter 4 <2012-01-17, Tue>
+ 
+chapter 3 
+ o implemented exercies in chapter 3 <2012-01-11, Wed>
+ 
+chapter 2 
+ o implemented exercies in chapter 2 <2012-01-06, Fri>
