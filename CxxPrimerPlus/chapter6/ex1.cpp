@@ -3,7 +3,7 @@ Write a program that reads keyboard input to the @ symbol and that echoes the in
 except for digits, converting each uppercase character to lowercase, and vice versa.
 (Don’t forget the cctype family.)
  */
-
+//没有把数字除外
 #include <iostream>
 #include <cctype>
 
